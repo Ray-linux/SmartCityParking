@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+    --padding-inline-section: 20px;
+        --heading: rgb(0 10 45);
+        --para: #777;
+        --para-tint: #e4e4e4;
+        --white: #fff;
+        --black: #212529;
+        --helper: #8490ff;
+        --overlay: #3e64ff;
+        --helper-tint: #f3f4ff;
+        --bg: rgb(249 249 255);
+        --icons-bg: rgba(144, 172, 209, 0.2);
+        --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+        --gradientSupport: -webkit-linear-gradient(
+          0deg,
+          rgb(132 144 255) 0%,
+          rgb(98 189 252) 100%
+        );
+        --shadow: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+        --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+      }
+
+
+      .container1 {
+        max-width: 100%;
+        margin-inline: auto;
+        padding-inline: var(--padding-inline-section);
+        overflow: hidden;
+    }
+
+    .flex1 {
+        display: flex;
+        align-items: center;
+    }
+#hero{
+    background: url("https://img.freepik.com/free-vector/modern-three-dimensional-spheres-background_79603-1448.jpg?w=740&t=st=1696895959~exp=1696896559~hmac=d6c949419d0d31c0d612045c2cd81472971469c185c4c288517a790ab9f8d701"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    .header-section1 {
+        display: flex;
+        overflow-x: hidden;
+
+        gap: 50px;
+        justify-content: center;
+    }
+    .header-left1 {
+        max-width: 40vw;
+        margin-bottom: 10%;
+    }
+
+    .header-right1 img {
+        width: 100%;
+    }
+    .header-left1 h1 {
+        margin-top: 20px;
+    
+    }
+    .get-started-btn1 {
+        margin-top: 20px;
+    }
+
+    .primary-button1 {
+        background-color: var(--accent-color);
+        border-radius: 6px;
+        font-weight: 500;
+        color: white !important;
+        padding: 12px 24px;
+        box-shadow: 0 0 2px var(--secondary-text-color);
+        transition: 0.2s ease-out;
+        text-align: center;
+        
+       
+    }
+    
+    .primary-button1:hover {
+        background-color: var(--accent-color-dark);
+    }
+
+    .hero-para{
+        margin-bottom: 2rem;
+    }
+
+    @media screen and (max-width: 479px) {
+        .header-section1{
+            flex-direction: column-reverse;
+        }
+        .header-left1 {
+            max-width: 80vw;
+            
+        }
+    }

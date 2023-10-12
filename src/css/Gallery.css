@@ -1,0 +1,20 @@
+.heading{
+    margin: 4% 6%;
+    text-align: center;
+}
+.eventCard{
+    width: 30%;
+    /* background-color: #b3bdc4 ; */
+    background-color: orange;
+}
+.cardTitle{
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width:479px) {
+    .eventCard{
+            width: 90%;
+    }
+}

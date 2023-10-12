@@ -23,48 +23,60 @@ function NavBar() {
          
         
             
-            <li className="nav-item">
+          <li className="nav-item">
               <NavLink
                 exact
-                to="/"
+                to="/cars"
                 activeClassName="active"
                 className="nav-links homeLink"
                 onClick={handleClick}
               >
-                Home
+                Car Spaces
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 exact
-                to="/about"
+                to="/bikes"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                About
+                Bike Spaces
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 exact
-                to="/gallery"
+                to="/login"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                Gallery
+                Login
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/register"
                 activeClassName="active"
                 className="nav-links nav-contact"
                 onClick={handleClick}
               >
-                Contact Us
+                Register
+              </NavLink>
+            </li>
+            
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/profile"
+                activeClassName="active"
+                className="nav-links homeLink"
+                onClick={handleClick}
+              >
+                My Profile
               </NavLink>
             </li>
           </ul>

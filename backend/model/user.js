@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const studentSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     fname: {
         type: String,
         required: true
@@ -11,7 +11,7 @@ const studentSchema = mongoose.Schema({
     },
     post:{
         type: Boolean,
-        required: true,
+        default: false
     },
     phone:{
         type: Number,
@@ -19,7 +19,12 @@ const studentSchema = mongoose.Schema({
     },
     email:{
         type: String,
-        required: true
+        required: true,
+        unique: true,
+        match: [
+            /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/,
+            'Please add a valid email'
+        ]
     },
     password: {
         type: String,
@@ -30,6 +35,6 @@ const studentSchema = mongoose.Schema({
 
 
 
-const student = mongoose.model('student', studentSchema);
+const user = mongoose.model('user', userSchema);
 
-export default student;
+export default user;

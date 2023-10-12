@@ -1,5 +1,5 @@
 import express from "express"
-import { login, register, students } from "../controllers/usercontroll.js";
+import { login, register} from "../controllers/usercontroll.js";
 
 import {registervehicle} from "../controllers/vehiclecontroll.js"
 import {registreLocation} from "../controllers/locationcontroller.js"

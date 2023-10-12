@@ -1,7 +1,7 @@
 import express from "express";
 
 //models
-import Student from "../model/user.js";
+import User from "../model/user.js";
 import Token from "../model/token.js";
 
 //packages
@@ -14,22 +14,21 @@ dotenv.config();
 
 export const register = async (req, res) => {
   try {
-    const data = await Student.findOne({ enrollment: req.body.enrollment });
+    const data = await User.findOne({ email: req.body.email });
     if (data != null)
-      return res.status(409).json({ success: false, flag: "duplicate_enrollment", msg: "try with another Enrollment" });
+      return res.status(409).json({ success: false, flag: "duplicate_email", msg: "try with another Email"});
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const student = {
+    const user = {
       fname: req.body.fname,
       lname: req.body.lname,
-      enrollment: req.body.enrollment,
       phone: req.body.phone,
-      semester: req.body.semester,
+      email: req.body.email,
       password: hashedPassword,
     };
 
-    const newStudent = Student(student);
-    await newStudent.save();
+    const newUser = User(user);
+    await newUser.save();
     return res.status(200).json({ success: true,msg: "registration successfull" });
   } catch (e) {
     return res.status(500).json({  });
@@ -37,7 +36,7 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const data = await Student.findOne({enrollment: req.body.enrollment});
+  const data = await User.findOne({enrollment: req.body.enrollment});
   if(data == null)
     return res.status(401).json({success: false, flag:"no_account", msg:"Don't have an account"})
   try {
@@ -59,10 +58,10 @@ export const login = async (req, res) => {
 }
 
 
-export const students = async (req, res) => {
+export const Users = async (req, res) => {
   try {
-    const studentsData = await Student.find({}, {_id:0, fname:1, lname:1, phone:1, enrollment:1, semester:1})
-    return res.status(200). json(studentsData)
+    const UsersData = await User.find({}, {_id:0, fname:1, lname:1, phone:1, enrollment:1, semester:1})
+    return res.status(200). json(UsersData)
   } catch (e) {
     return res.status(500).json({error: e})
   }

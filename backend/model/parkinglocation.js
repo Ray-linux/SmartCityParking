@@ -4,7 +4,11 @@ const parkingLocationSchema = mongoose.Schema({
     address: {
         type: String,
         required: true
-    }, 
+    },
+    name: {
+        type: String,
+        required: true,
+    },
     pincode:{
         type: String,
         required: true

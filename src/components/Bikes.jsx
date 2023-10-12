@@ -1,8 +1,11 @@
+import BikeParking from "./BikeParking"
 
 
 const Bikes = () => {
   return (
-    <div>Bikes</div>
+   <>
+    <BikeParking/>
+   </>
   )
 }
 

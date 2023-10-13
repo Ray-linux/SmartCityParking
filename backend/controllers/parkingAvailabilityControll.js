@@ -1,6 +1,7 @@
 import ParkingLocation from "../model/parkinglocation.js";
 import Parkingava from "../model/parkingava.js";
 import Parkingslot from "../model/parkingslots.js";
+import schedule from "node-schedule"
 
 
 
@@ -48,7 +49,9 @@ export const parkingSlot = async (req, res) =>{
 
 
         const newSlot = Parkingslot(slotDetails);
-        await newSlot.save();
+        await newSlot.save() ? schedule.scheduleJob('10 Seconds Notification', new Date(Date.now() + 10000),  ()=>{
+            console.log("time is up")
+        }): console.log("not saved")
         return res.status(200).json({msg: "created successfully"})
     }
     catch(e){
@@ -60,6 +63,7 @@ export const parkingSlot = async (req, res) =>{
 export const updateSlot = async(req, res)=> {
     try {
         await Parkingava.findOneAndUpdate( {slot_id: req.params.id}, {ave: true})
+        
         return res.status(200).json('updated successfully');
     } catch (e) {
         return res.status(500).json({msg: "internal server error"});    

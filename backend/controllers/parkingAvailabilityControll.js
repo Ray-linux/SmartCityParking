@@ -55,3 +55,13 @@ export const parkingSlot = async (req, res) =>{
         return res.status(500).json({msg: "internal server error"});
     }
 }
+
+
+export const updateSlot = async(req, res)=> {
+    try {
+        await Parkingava.findOneAndUpdate( {slot_id: req.params.id}, {ave: true})
+        return res.status(200).json('updated successfully');
+    } catch (e) {
+        return res.status(500).json({msg: "internal server error"});    
+    }
+}
